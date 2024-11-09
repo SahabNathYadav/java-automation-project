@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="37.07" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Feature to google search" name="Validate google search is working" time="36.867">
+<system-out><![CDATA[
+Given browser is open.......................................................passed
+When user enters the url "https://www.google.com"...........................passed
+And user enters a text "What is GenAI" in seach box.........................passed
+And hits enter..............................................................passed
+Then user can search the text "Artificial Intelligence" in searched results page.passed
+]]></system-out>
+</testcase>
+</testsuite>
