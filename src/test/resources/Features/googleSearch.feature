@@ -23,9 +23,13 @@ Background: Below are common steps
     Given browser is open
 
   @tag3
-  Scenario: Validate google search is working
+  Scenario Outline: Validate google search is working
     
-    When user enters the url "https://www.google.com"
+    When user enters the url <url>
     And user enters a text "What is GenAI" in seach box
     And hits enter
     Then user can search the text "Artificial Intelligence" in searched results page
+    
+     Examples: 
+      | url |
+      |"https://www.google.com" |

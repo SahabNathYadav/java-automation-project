@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumUsingTestNG.SimpleTestUsingTestNG">
+      <class name="testRunner.TestNGRunner">
         <methods>
-          <include name="testRandomString"/>
-          <include name="firstTest"/>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- seleniumUsingTestNG.SimpleTestUsingTestNG -->
+      </class> <!-- testRunner.TestNGRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

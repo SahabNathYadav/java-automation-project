@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="37.07" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Feature to google search" name="Validate google search is working" time="36.867">
+<testsuite name="Cucumber" time="65.073" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Feature to google search" name="Validate google search is working - #1.1" time="64.807">
 <system-out><![CDATA[
 Given browser is open.......................................................passed
 When user enters the url "https://www.google.com"...........................passed
