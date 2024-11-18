@@ -3,26 +3,36 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.GoogleSearchPage;
 import io.cucumber.java.en.And;
+
+import pageObjects.GoogleSearchPage;
+
+import utilities.DriverManager;
+
 
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GoogleSearchSteps {
 	
-	private WebDriver driver = null;
+	private WebDriver driver;
 	private GoogleSearchPage googleSearchPage;
-	//ChromeOptions options = new ChromeOptions();
+
 	@SuppressWarnings("deprecation")
 	@Given("browser is open")
 	public void browser_is_open() {
 	    System.out.println("Inside the Browser open step");
-	    System.setProperty("webdriver.chrome.driver","./src/test/resources/drivers/chromedriver");
+	    // Below line of code is commented as we are now using DriverManager class to manage the driver version and instance itself.
+	    // No need to download the Chrome Driver manually everu time when Chrome version changes.
 	    
-	    driver = new ChromeDriver();
+	    //System.setProperty("webdriver.chrome.driver","./src/test/resources/drivers/chromedriver"); 
+	    //driver = new ChromeDriver();
+	    
+	    //Use the DriverManager to get the driver instance
+	    driver = DriverManager.getDriver();
+	    
+	    
 	    googleSearchPage = new GoogleSearchPage(driver);
 	    
 	    driver.manage().window().maximize();
@@ -58,8 +68,7 @@ public class GoogleSearchSteps {
 		googleSearchPage.verifySearchResults(searchText);
 		
 		System.out.println("Closing the browser");
-		driver.close();
-		driver.quit();
+		DriverManager.quitDriver();
 	    
 	}
 

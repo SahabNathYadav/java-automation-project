@@ -1,25 +1,32 @@
 package seleniumUsingTestNG;
 
 import org.testng.annotations.Test;
+
+import utilities.DriverManager;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.apache.commons.text.RandomStringGenerator;
 
 public class SimpleTestUsingTestNG {
 
+	WebDriver driver;
 	@Test(priority=1,groups= {"sanity","sanityTest"})
 	public void firstTest() {
 		System.out.println("Sahab first testng test is running ...");
-		//System.setProperty("webdriver.chrome.driver","/Users/sahabnathyadav/Desktop/Chrome/chromedriver");
-		System.setProperty("webdriver.chrome.driver","./src/test/resources/drivers/chromedriver");
-		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.lambdatest.com");
+		// Comment below code. Instead use the DriverManager to manager the driver version and instances
+		//System.setProperty("webdriver.chrome.driver","./src/test/resources/drivers/chromedriver");
+		driver = DriverManager.getDriver();
+		
+		driver.get("https://www.lambdatest.com");	
 		String title = driver.getTitle();
+		
 		System.out.println("Title is :"+title);
-		driver.quit();
+		
+		//Close the browser
+		DriverManager.quitDriver();
 		// Assert.assertTrue(false);
 	}
 	

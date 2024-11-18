@@ -5,7 +5,6 @@ Feature: Feature to test login functionality
 # user: admin@yourstore.com, pass: admin
   @tag1
   Scenario Outline: Check user is logged in successfully
-    Given browser is open
     When user enters <userid> and <password>
     And cliks on login button "button1"
     Then user is navigated to home page
