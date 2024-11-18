@@ -11,6 +11,10 @@
     <classes>
       <class name="seleniumUsingTestNG.SimpleTestUsingTestNG"/>
       <class name="testRunner.TestNGRunner" />
+      <class name="restApi.BookRestApiTesting"/>
+      <class name="restApi.GetCookieFromRestApi"/>
+      <class name="restApi.QueryAndPathParamInRestApi"/>
+      <class name="restApi.UserRestApiTesting"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
